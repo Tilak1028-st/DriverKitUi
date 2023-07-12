@@ -11,6 +11,9 @@
 		971083472A5EAB2600C3860E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971083462A5EAB2600C3860E /* ContentView.swift */; };
 		971083492A5EAB2900C3860E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 971083482A5EAB2900C3860E /* Assets.xcassets */; };
 		9710834C2A5EAB2900C3860E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9710834B2A5EAB2900C3860E /* Preview Assets.xcassets */; };
+		971083542A5EABDC00C3860E /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971083532A5EABDC00C3860E /* DashBoardView.swift */; };
+		9710835B2A5ED05F00C3860E /* Rubik-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 971083562A5ECD4100C3860E /* Rubik-VariableFont_wght.ttf */; };
+		9710835C2A5ED06400C3860E /* Rubik-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 971083552A5ECD3800C3860E /* Rubik-Italic-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		971083462A5EAB2600C3860E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		971083482A5EAB2900C3860E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9710834B2A5EAB2900C3860E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		971083532A5EABDC00C3860E /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
+		971083552A5ECD3800C3860E /* Rubik-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		971083562A5ECD4100C3860E /* Rubik-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		971083572A5ECD8A00C3860E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +58,10 @@
 		971083432A5EAB2600C3860E /* DriverKitUi */ = {
 			isa = PBXGroup;
 			children = (
+				971083572A5ECD8A00C3860E /* Info.plist */,
 				971083442A5EAB2600C3860E /* DriverKitUiApp.swift */,
-				971083462A5EAB2600C3860E /* ContentView.swift */,
+				971083522A5EABBD00C3860E /* Views */,
+				9710835A2A5ECECA00C3860E /* Fonts */,
 				971083482A5EAB2900C3860E /* Assets.xcassets */,
 				9710834A2A5EAB2900C3860E /* Preview Content */,
 			);
@@ -65,6 +74,24 @@
 				9710834B2A5EAB2900C3860E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		971083522A5EABBD00C3860E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				971083462A5EAB2600C3860E /* ContentView.swift */,
+				971083532A5EABDC00C3860E /* DashBoardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9710835A2A5ECECA00C3860E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				971083562A5ECD4100C3860E /* Rubik-VariableFont_wght.ttf */,
+				971083552A5ECD3800C3860E /* Rubik-Italic-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +152,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9710835C2A5ED06400C3860E /* Rubik-Italic-VariableFont_wght.ttf in Resources */,
+				9710835B2A5ED05F00C3860E /* Rubik-VariableFont_wght.ttf in Resources */,
 				9710834C2A5EAB2900C3860E /* Preview Assets.xcassets in Resources */,
 				971083492A5EAB2900C3860E /* Assets.xcassets in Resources */,
 			);
@@ -137,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				971083542A5EABDC00C3860E /* DashBoardView.swift in Sources */,
 				971083472A5EAB2600C3860E /* ContentView.swift in Sources */,
 				971083452A5EAB2600C3860E /* DriverKitUiApp.swift in Sources */,
 			);
@@ -264,17 +294,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DriverKitUi/Preview Content\"";
-				DEVELOPMENT_TEAM = 5WCFP4U964;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DriverKitUi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,6 +315,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tilak.DriverKitUi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,11 +333,13 @@
 				DEVELOPMENT_TEAM = 5WCFP4U964;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DriverKitUi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
