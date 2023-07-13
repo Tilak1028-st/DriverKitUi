@@ -42,7 +42,7 @@ struct DashBoardView: View {
                     .shadow(radius: 2)
                 
                 onGoingTrip
-                    .frame(width: .infinity)
+                    .frame(maxWidth: .infinity)
                     .frame(height: geo.size.height*0.14)
                     .background(Color.white)
                     .cornerRadius(20.0)

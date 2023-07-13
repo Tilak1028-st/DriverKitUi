@@ -14,6 +14,7 @@
 		971083542A5EABDC00C3860E /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971083532A5EABDC00C3860E /* DashBoardView.swift */; };
 		9710835B2A5ED05F00C3860E /* Rubik-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 971083562A5ECD4100C3860E /* Rubik-VariableFont_wght.ttf */; };
 		9710835C2A5ED06400C3860E /* Rubik-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 971083552A5ECD3800C3860E /* Rubik-Italic-VariableFont_wght.ttf */; };
+		97340C352A60065E0064150A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97340C342A60065E0064150A /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		971083552A5ECD3800C3860E /* Rubik-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		971083562A5ECD4100C3860E /* Rubik-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		971083572A5ECD8A00C3860E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		97340C342A60065E0064150A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				971083462A5EAB2600C3860E /* ContentView.swift */,
 				971083532A5EABDC00C3860E /* DashBoardView.swift */,
+				97340C342A60065E0064150A /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97340C352A60065E0064150A /* ProfileView.swift in Sources */,
 				971083542A5EABDC00C3860E /* DashBoardView.swift in Sources */,
 				971083472A5EAB2600C3860E /* ContentView.swift in Sources */,
 				971083452A5EAB2600C3860E /* DriverKitUiApp.swift in Sources */,
