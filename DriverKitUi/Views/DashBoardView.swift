@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct DashBoardView: View {
+    let initialCoordinate = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
+    let zoomLevel = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    
     var body: some View {
         ZStack {
             GeometryReader { geo in
@@ -30,11 +34,29 @@ struct DashBoardView: View {
                 
                 walletView
                     .frame(maxWidth: .infinity)
-                    .frame(height: geo.size.height*0.15)
+                    .frame(height: geo.size.height*0.14)
                     .background(Color.white)
                     .cornerRadius(20.0)
                     .padding(.horizontal, 20)
                     .padding(.top, geo.size.height*0.15 + geo.size.height*0.17)
+                    .shadow(radius: 2)
+                
+                onGoingTrip
+                    .frame(width: .infinity)
+                    .frame(height: geo.size.height*0.14)
+                    .background(Color.white)
+                    .cornerRadius(20.0)
+                    .padding(.horizontal, 20)
+                    .padding(.top, geo.size.height*0.15 + geo.size.height*0.17 + geo.size.height * 0.16)
+                    .shadow(radius: 2)
+                
+                previousTripView
+                    .frame(maxWidth: .infinity)
+                    .frame(height: geo.size.height*0.24)
+                    .background(Color.white)
+                    .cornerRadius(20.0)
+                    .padding(.horizontal, 20)
+                    .padding(.top, geo.size.height*0.15 + geo.size.height*0.49)
                     .shadow(radius: 2)
                 
                 VStack {
@@ -145,7 +167,7 @@ struct DashBoardView: View {
     
     private var todayStatsView: some View {
         VStack {
-            VStack {
+            VStack(spacing: 5) {
                 Text("Today")
                     .font(.custom("Rubik", size: 18))
                 Text("$ 244.00")
@@ -183,7 +205,7 @@ struct DashBoardView: View {
     private var walletView: some View {
         VStack {
             HStack {
-                VStack {
+                VStack(spacing: 5) {
                     Text("Wallet Balance")
                         .font(.custom("Rubik", size: 18))
                         .fontWeight(.semibold)
@@ -228,10 +250,118 @@ struct DashBoardView: View {
                 }
                 .padding(.horizontal)
             }
-
         }
     }
+    
+    private var onGoingTrip: some View {
+        VStack {
+            HStack {
+                VStack(spacing: 5) {
+                    Text("Ongoing Trip")
+                        .font(.custom("Rubik", size: 18))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("FontBlacKColor_#2D3142"))
+                    
+                    HStack(alignment: .center) {
+                        Image("Ellipse_girl")
+                        
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("Megan Fox")
+                                .font(.custom("Rubik", size: 14))
+                            
+                            Image(" 4.8")
+                        }
+                    }
+                }
+                
+                Spacer()
+                
+                Button {
+                    //
+                } label: {
+                    Text("Navigation")
+                        .font(.system(size: 14))
+                        .bold()
+                }
+                .padding(15)
+                .background(Color("lightGrey_#F4F6FA"))
+                .cornerRadius(20.0)
+            }
+            .padding(.horizontal)
+            
+            Divider()
+            
+            Button {
+                // Upcoming trips
+            } label: {
+                HStack(alignment: .center) {
+                    Text("Upcoming Trips (5)")
+                        .font(.custom("Rubik-Light", size: 14))
+                        .foregroundColor(Color.black)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .resizable()
+                        .frame(width: 10, height: 10)
+                        .foregroundColor(Color.black)
+                }
+                .padding(.horizontal)
+               
+            }
+        }
+    }
+    
+    private var previousTripView: some View {
+        VStack {
+            HStack {
+                Text("Previous Trip")
+                    .font(.custom("Rubik", size: 18))
+                    .fontWeight(.semibold)
+                    .padding(.top, 5)
+                
+                Spacer()
+            }
+            
+            ZStack {
+                MapView(initialCoordinate: initialCoordinate, zoomLevel: zoomLevel)
+                    .cornerRadius(20.0)
+            }
+            
+            HStack {
+                Image("Ellipse 4")
+                    .padding(.trailing, 10)
+                
+                Text("John Dove")
+                    .font(.custom("Rubik", size: 14))
+                    .fontWeight(.semibold)
+                
+                Spacer()
+                
+                Text("Total: $500")
+                    .font(.custom("Rubik", size: 14))
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color.blue)
+            }
+            .padding(.bottom, 5)
+        }
+        .padding(.horizontal)
+    }
 }
+
+
+struct MapView: UIViewRepresentable {
+    let initialCoordinate: CLLocationCoordinate2D
+    let zoomLevel: MKCoordinateSpan
+    
+    func makeUIView(context: Context) -> MKMapView {
+        MKMapView(frame: .zero)
+    }
+    
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        let region = MKCoordinateRegion(center: initialCoordinate, span: zoomLevel)
+        uiView.setRegion(region, animated: true)
+    }
+}
+
 
 extension View {
     func cornerRadius(radius: CGFloat, corners: UIRectCorner) -> some View {
